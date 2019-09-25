@@ -1,11 +1,11 @@
 clear, clc
 
-p = '/home/mc457/files/CellBiology/IDAC/Marcelo/Sabatini/Hochbaum/Registration/sampleAnnotatedBrain/DataForPC/Contour';
+p = '/scratch/RiffleShuffle/DataForPC/Contour';
 modelC = pixelClassifierTrain(p,'adjustContrast',true,'adjustContrastThr',0.01);
 
 %% save model
 
-save('/home/mc457/files/CellBiology/IDAC/Marcelo/Etc/RiffleShuffle/SupportFiles/modelC.mat','modelC');
+save('/scratch/RiffleShuffle/SupportFiles/modelC.mat','modelC');
 
 %%
 

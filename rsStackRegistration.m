@@ -11,7 +11,7 @@ clear, clc
      % true: quantify spots
      % false: quantify diffuse signal
 
-    pathIn = '/home/mc457/files/CellBiology/IDAC/Marcelo/Etc/RiffleShuffle/Stacks/KMR16_Sorted_B_1.55_2.45_Downsized';
+    pathIn = '/scratch/RiffleShuffle/Stacks/KMR16_Sorted_B_1.55_2.45_Downsized';
     % full path to _Downsized folder
 %///
 

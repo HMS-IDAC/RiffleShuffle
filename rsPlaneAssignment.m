@@ -19,7 +19,7 @@ clear, clc
 disp('read, resize template')
 
 %\\\SET
-    path = '/home/mc457/files/CellBiology/IDAC/Marcelo/Etc/RiffleShuffle/SupportFiles/template.tif';
+    path = '/scratch/RiffleShuffle/SupportFiles/template.tif';
     % full path to template.tif
 
     resizeFactorZ = 0.5;
@@ -37,7 +37,7 @@ end
 disp('read volume to register')
 
 %\\\SET
-    imFolder = '/home/mc457/files/CellBiology/IDAC/Marcelo/Etc/RiffleShuffle/Stacks/KMR16_Sorted_B_1.55_2.45_Downsized';
+    imFolder = '/scratch/RiffleShuffle/Stacks/KMR16_Sorted_B_1.55_2.45_Downsized';
     % full path to _Downsized folder
 %///
 
@@ -467,7 +467,7 @@ close all
 disp('read / crop annotations / re-scale / convert to list')
 
 %\\\SET
-    atlasLabelsPath = '/home/mc457/files/CellBiology/IDAC/Marcelo/Etc/RiffleShuffle/SupportFiles/annotationsUInt32.tif';
+    atlasLabelsPath = '/scratch/RiffleShuffle/SupportFiles/annotationsUInt32.tif';
     % full path to annotationsUInt32.tif
 %///
 
@@ -512,7 +512,7 @@ close all
 disp('count')
 
 %\\\
-    pathRegIDs = '/home/mc457/files/CellBiology/IDAC/Marcelo/Etc/RiffleShuffle/SupportFiles/RegionIDs.csv';
+    pathRegIDs = '/scratch/RiffleShuffle/SupportFiles/RegionIDs.csv';
     % full path to RegionIDs.csv
 %///
 

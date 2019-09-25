@@ -50,7 +50,7 @@ for i = 1:nImages
     end
     lbMaps = cell(1,nClasses);
     for j = 1:nClasses
-        classJ = imread([imp filesep imn sprintf('Class%d.png',classIndices(j))]);
+        classJ = imread([imp filesep imn sprintf('_Class%d.png',classIndices(j))]);
         classJ = (classJ(:,:,1) > 0);
         if balanceClasses
             nSamplesPerClass(j) = sum(classJ(:));

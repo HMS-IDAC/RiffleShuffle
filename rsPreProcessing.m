@@ -4,11 +4,11 @@ clear, clc
 
 %\\\SET
     % full path to folder containing images
-    pathIn = '/home/mc457/files/CellBiology/IDAC/Marcelo/Etc/RiffleShuffle/Stacks/KMR16_Sorted_B_1.55_2.45';
+    pathIn = '/scratch/RiffleShuffle/Stacks/KMR16_Sorted_B_1.55_2.45';
 
     % path to contour and mask machine learning models
-    pathModelC = '/home/mc457/files/CellBiology/IDAC/Marcelo/Etc/RiffleShuffle/SupportFiles/modelC.mat';
-    pathModelM = '/home/mc457/files/CellBiology/IDAC/Marcelo/Etc/RiffleShuffle/SupportFiles/modelM.mat';
+    pathModelC = '/scratch/RiffleShuffle/SupportFiles/modelC.mat';
+    pathModelM = '/scratch/RiffleShuffle/SupportFiles/modelM.mat';
 
     % if to quantify spots (otherwise quantifies diffuse signal)
     quantSpots = true; 
