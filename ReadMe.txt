@@ -15,7 +15,18 @@ rsTrainContour
 rsTrainMask
 
 
-Developed by Marcelo Cicconet & Daniel Hochbaum
+The code is designed to make use of Matlab's 'code cells',
+where a cell is a section of code delimited by lines starting with '%%',
+which can be executed using CTRL+Enter.
+
+
+Parameters that need to be set are indicated like so:
+%\\\SET
+    parameter = x;
+%///
+
+
+Developed by Marcelo Cicconet & Daniel R. Hochbaum
 
 -----
 

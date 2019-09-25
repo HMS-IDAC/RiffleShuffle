@@ -6,6 +6,13 @@ clear, clc
     interactive = true;
     % true: interactive mode (run cell by cell)
     % false: fast track (run by calling rsStackRegistration in Matlab's prompt)
+    % 
+    % Note: if interactive = true, when two cells have the same title
+    %       except for content in brackets, e.g.
+    %           [interactive] title
+    %           [fast track] title
+    %       please only execute the 'interactive' cell.
+    %       'interactive' cells are ignored in 'fast track' mode, and vice-versa.
 
     quantSpots = true;
      % true: quantify spots
@@ -116,6 +123,7 @@ end
 
 %% [fast track] automated vertical symmetry registration
 
+if ~interactive
 disp('vertical symmetry registration')
 load([pathOut filesep 'lTform.mat']);
 load([pathOut filesep 'xyOffsets.mat']);
@@ -153,6 +161,7 @@ for i = 1:nImages
     xy(:,1) = xy(:,1)+xyOffsets{i}(1);
     xy(:,2) = xy(:,2)+xyOffsets{i}(2);
     spots{i} = xy;
+end
 end
 
 %% transform spots
@@ -224,7 +233,7 @@ maxSink = 100;
 %\\\SET
     % indices of images that need the axis of symmetry to be fixed; multiple indices separated by space
     % run with imIndices = [] if no adjustment is needed (to setup spots3 variable)
-    imIndices = [2 3 10];
+    imIndices = [3];
 %///
 
 spots3 = cell(1,nImages);
@@ -250,6 +259,7 @@ end
 
 %% [fast track] check/adjust symmetry (do not execute more than once)
 
+if ~interactive
 disp('adjust symmetry')
 load([pathOut filesep 'tforms23.mat'])
 imIndices = [];
@@ -266,6 +276,7 @@ for i = 1:nImages
         spots3{i} = transformSpots(spots2{i},tform);
         imIndices = [imIndices i];
     end
+end
 end
 
 %% check if spots were transformed correctly
@@ -325,6 +336,7 @@ end
 
 %% [fast track] check/adjust symmetry on each left or right half (do not execute more than once)
 
+if ~interactive
 disp('adjust symmetry on each half')
 load([pathOut filesep 'tforms34.mat']);
 spots4 = cell(1,nImages);
@@ -341,6 +353,7 @@ for i = 1:nImages
         spots4{i} = symmetryTool2.staticApplyTformsToSpots(tform{1},tform{2},tform{3},spots3{i});
         imIndices = [imIndices i];
     end
+end
 end
 
 %% check if spots were transformed correctly
@@ -392,6 +405,7 @@ end
 
 %% [fast track] pairwise vertical registration
 
+if ~interactive
 disp('pairwise vertical registration')
 load([pathOut filesep 'tforms.mat']);
 sI0 = cell(1,nImages);
@@ -406,6 +420,7 @@ for i = 1:nImages
     sI2{i} = S2(:,:,i);
     sIQ{i} = SQ(:,:,i);
     rI1{i} = imresize(S1(:,:,i),0.1);
+end
 end
 
 %% global vertical registration
