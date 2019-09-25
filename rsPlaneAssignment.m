@@ -37,7 +37,7 @@ end
 disp('read volume to register')
 
 %\\\SET
-    imFolder = '/scratch/RiffleShuffle/Stacks/KMR16_Sorted_B_1.55_2.45_Downsized';
+    imFolder = '/scratch/RiffleShuffle/Stacks/Dataset_B_1.55_2.45_Downsized';
     % full path to _Downsized folder
 %///
 

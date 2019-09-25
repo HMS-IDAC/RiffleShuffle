@@ -4,7 +4,7 @@ clear, clc
 
 %\\\SET
     % full path to folder containing images
-    pathIn = '/scratch/RiffleShuffle/Stacks/KMR16_Sorted_B_1.55_2.45';
+    pathIn = '/scratch/RiffleShuffle/Stacks/Dataset_B_1.55_2.45';
 
     % path to contour and mask machine learning models
     pathModelC = '/scratch/RiffleShuffle/SupportFiles/modelC.mat';
