@@ -54,6 +54,7 @@ DataForPC
 -----
 
 References:
+
     M. Cicconet and D. R. Hochbaum.
     Interactive, Symmetry Guided Registration to the Allen Mouse Brain Atlas.
     [To appear at] BioImage Informatics 2019. Seattle, WA.
