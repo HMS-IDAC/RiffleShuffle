@@ -57,7 +57,7 @@ References:
 
     M. Cicconet and D. R. Hochbaum.
     Interactive, Symmetry Guided Registration to the Allen Mouse Brain Atlas.
-    [To appear at] BioImage Informatics 2019. Seattle, WA.
+    BioImage Informatics 2019. Seattle, WA.
 
     M. Cicconet and D. R. Hochbaum.
     Riffle Shuffle: A Supervised, Symmetry-Driven, GUI Toolkit for Mouse Brain Stack Registration and Plane Assignment.
