@@ -256,6 +256,9 @@ for i = 1:nImages
     imshowpair(imadjust(TimSubSeq{i}),tMasks{i}), pause(0.1)
     end
 end
+if interactive
+    close all
+end
 
 
 %% prepare to register planes
@@ -505,6 +508,7 @@ for i = 1:nImages
     end
 end
 pcpStack = list2stack(pcp);
+masksStack = imopen(list2stack(ttMasks) > 0,strel('sphere',1)); % masks from data, not template
 close all
 
 %% count
@@ -521,25 +525,30 @@ CT = table2cell(T);
 
 regionIndices = cat(1,CT{:,1})';
 regionCounts = zeros(1,length(regionIndices));
+regionCountsM = zeros(1,length(regionIndices));
 
 subRsubA = zeros(size(pcpStack));
 for i = 1:nImages
     A = annotSeq{optimalAssignmentIndices(i)};
     subRsubA(:,:,i) = A;
     C = pcp{i};
+    M = masksStack(:,:,i);
     for j = 1:length(regionIndices)
         regionCounts(j) = regionCounts(j)+sum(C(A == regionIndices(j)));
+        regionCountsM(j) = regionCountsM(j)+sum(M(A == regionIndices(j)));
     end
 end
 
-C = cell(length(regionIndices),3);
+C = cell(length(regionIndices),5);
 for i = 1:length(regionIndices)
     C{i,1} = regionIndices(i);
-    C{i,2} = regionCounts(i);
-    C{i,3} = CT{i,2};
+    C{i,2} = CT{i,2};
+    C{i,3} = regionCounts(i);
+    C{i,4} = regionCountsM(i);
+    C{i,5} = regionCounts(i)/regionCountsM(i);
 end
 
-T = cell2table(C,'VariableNames',{'AreaID','Quant','AreaName'});
+T = cell2table(C,'VariableNames',{'AreaID','AreaName','Quant','Volume','Average'});
 
 if quantSpots
     qType = 'Spots';
