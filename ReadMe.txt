@@ -31,7 +31,7 @@ Developed by Marcelo Cicconet & Daniel R. Hochbaum
 -----
 
 Some sample data is available for demo purposes at
-https://www.dropbox.com/s/gs5hb2w187vcp21/RiffleShuffle.zip?dl=0
+https://www.dropbox.com/s/wta56buh23nvz4c/RiffleShuffle.zip?dl=0
 
 It contains 3 folders:
 
